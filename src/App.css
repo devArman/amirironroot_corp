@@ -123,7 +123,6 @@
 
 /* New Hero Slider Section */
 .hero-slider-section {
-  margin-top: 80px;
   position: relative;
   overflow: hidden;
 }
@@ -202,6 +201,7 @@
   max-width: 1000px;
   text-align: center;
   animation: heroSlideIn 0.8s ease;
+  margin-bottom: 20px;
 }
 
 @keyframes heroSlideIn {
@@ -469,10 +469,6 @@
 }
 
 /* Section Styles */
-section {
-  padding: 5rem 0;
-}
-
 .section-header {
   text-align: center;
   margin-bottom: 3rem;
@@ -501,6 +497,7 @@ section {
   background: linear-gradient(180deg, var(--light-green-2), var(--yellow-2));
   position: relative;
   overflow: hidden;
+  padding: 2rem 0;
 }
 
 .about::before {
@@ -557,9 +554,10 @@ section {
 .services {
   background: linear-gradient(180deg, var(--yellow-2), var(--light-orange-2));
   position: relative;
+  padding: 2rem 0;
 }
 
-.services::after {
+/* .services::after {
   content: '';
   position: absolute;
   bottom: -50%;
@@ -569,7 +567,7 @@ section {
   background: radial-gradient(circle, var(--light-green-3) 0%, transparent 70%);
   border-radius: 50%;
   opacity: 0.4;
-}
+} */
 
   .services-intro {
     text-align: center;
@@ -724,6 +722,7 @@ section {
   text-align: center;
   position: relative;
   overflow: hidden;
+  padding: 2rem 0;
 }
 
 .contact::before {
@@ -982,8 +981,10 @@ html {
     font-size: 0.95rem;
   }
 
-  section {
-    padding: 3rem 0;
+  .about,
+  .services,
+  .contact {
+    padding: 2rem 0;
   }
 
   .container {
@@ -1007,10 +1008,6 @@ html {
 }
 
 @media (max-width: 480px) {
-  .hero-slider-section {
-    margin-top: 70px;
-  }
-
   .hero-slider-container {
     height: 60vh;
     min-height: 400px;
@@ -1086,7 +1083,9 @@ html {
     font-size: 0.95rem;
   }
 
-  section {
+  .about,
+  .services,
+  .contact {
     padding: 2.5rem 0;
   }
 
