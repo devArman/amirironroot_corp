@@ -48,7 +48,10 @@ function Slider() {
               <div className="hero-slide-overlay"></div>
               <div className="hero-slide-content">
                 <div className="hero-content-wrapper">
-                  <h1 className="hero-main-title">Quality Construction & Remodeling You Can Trust</h1>
+                  <h1 className="hero-main-title">
+                    <span style={{ display: 'block', fontSize: '0.8em', marginBottom: '10px', color: '#ffd700' }}>AMIRIRONROOT CORP</span>
+                    Quality Construction & Remodeling You Can Trust
+                  </h1>
                   <p className="hero-main-subtitle">
                     We provide reliable, high-quality construction and remodeling services for homes and businesses.
                     From small updates to full renovations, we bring your vision to life with precision, transparency, and care.

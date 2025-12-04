@@ -11,6 +11,15 @@ function Navigation() {
     setIsMenuOpen(false)
   }
 
+  const handleScrollToSection = (e, id) => {
+    e.preventDefault()
+    const element = document.getElementById(id)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+    }
+    closeMenu()
+  }
+
   // Close menu when clicking on a link
   useEffect(() => {
     const links = document.querySelectorAll('.nav-link')
@@ -38,7 +47,7 @@ function Navigation() {
   return (
     <nav className="navbar" id="navbar">
       <div className="nav-container">
-        <div className="logo">AMIRIRONROOT CORP</div>
+        <a href="#home" className="logo" onClick={(e) => handleScrollToSection(e, 'home')}>AMIRIRONROOT CORP</a>
         
         {/* Hamburger Button */}
         <button 
@@ -55,16 +64,16 @@ function Navigation() {
         {/* Desktop Menu */}
         <ul className={`nav-menu ${isMenuOpen ? 'mobile-open' : ''}`}>
           <li>
-            <a href="#home" className="nav-link" onClick={closeMenu}>Home</a>
+            <a href="#home" className="nav-link" onClick={(e) => handleScrollToSection(e, 'home')}>Home</a>
           </li>
           <li>
-            <a href="#about" className="nav-link" onClick={closeMenu}>About Us</a>
+            <a href="#about" className="nav-link" onClick={(e) => handleScrollToSection(e, 'about')}>About Us</a>
           </li>
           <li>
-            <a href="#services" className="nav-link" onClick={closeMenu}>Services</a>
+            <a href="#services" className="nav-link" onClick={(e) => handleScrollToSection(e, 'services')}>Services</a>
           </li>
           <li>
-            <a href="#contact" className="nav-link" onClick={closeMenu}>Contact</a>
+            <a href="#contact" className="nav-link" onClick={(e) => handleScrollToSection(e, 'contact')}>Contact</a>
           </li>
         </ul>
       </div>

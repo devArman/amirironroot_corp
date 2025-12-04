@@ -8,7 +8,7 @@ function About() {
         </div>
         <div className="about-content">
           <p>
-            We are a professional construction and remodeling company dedicated to delivering strong
+            <strong>AMIRIRONROOT CORP</strong> is a professional construction and remodeling company dedicated to delivering strong
             workmanship and excellent customer service. With years of hands-on experience, we specialize in
             residential and light commercial projects.
           </p>
