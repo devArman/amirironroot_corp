@@ -20,27 +20,11 @@ function Navigation() {
     closeMenu()
   }
 
-  // Close menu when clicking on a link
+  // Close menu on scroll (links close it via handleScrollToSection)
   useEffect(() => {
-    const links = document.querySelectorAll('.nav-link')
-    links.forEach(link => {
-      link.addEventListener('click', closeMenu)
-    })
-    return () => {
-      links.forEach(link => {
-        link.removeEventListener('click', closeMenu)
-      })
-    }
-  }, [])
-
-  // Close menu on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      if (isMenuOpen) {
-        setIsMenuOpen(false)
-      }
-    }
-    window.addEventListener('scroll', handleScroll)
+    if (!isMenuOpen) return
+    const handleScroll = () => setIsMenuOpen(false)
+    window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [isMenuOpen])
 

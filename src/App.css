@@ -803,6 +803,15 @@
   font-size: 1rem;
 }
 
+.footer a {
+  color: var(--yellow);
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
 @media (max-width: 768px) {
   .footer {
     padding: 2rem 0;

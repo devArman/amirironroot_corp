@@ -1,38 +1,39 @@
 import { useState, useEffect } from 'react'
-import { sliderImages } from '../data/constants'
+import { sliderImages, contactInfo } from '../data/constants'
+
+const TRANSITION_MS = 600
+const AUTO_SLIDE_MS = 5000
 
 function Slider() {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [isTransitioning, setIsTransitioning] = useState(false)
 
-  // Auto-slide functionality
+  // Auto-slide; restarts the timer whenever the slide changes (including manual navigation)
   useEffect(() => {
     const interval = setInterval(() => {
-      nextSlide()
-    }, 5000)
+      setCurrentSlide((prev) => (prev + 1) % sliderImages.length)
+    }, AUTO_SLIDE_MS)
     return () => clearInterval(interval)
   }, [currentSlide])
 
+  // Unlock navigation once the CSS transition has finished
+  useEffect(() => {
+    if (!isTransitioning) return
+    const timeout = setTimeout(() => setIsTransitioning(false), TRANSITION_MS)
+    return () => clearTimeout(timeout)
+  }, [isTransitioning])
+
+  const changeSlide = (getIndex) => {
+    if (isTransitioning) return
+    setIsTransitioning(true)
+    setCurrentSlide(getIndex)
+  }
+
   const goToSlide = (index) => {
-    if (index === currentSlide || isTransitioning) return
-    setIsTransitioning(true)
-    setCurrentSlide(index)
-    setTimeout(() => setIsTransitioning(false), 600)
+    if (index !== currentSlide) changeSlide(() => index)
   }
-
-  const nextSlide = () => {
-    if (isTransitioning) return
-    setIsTransitioning(true)
-    setCurrentSlide((prev) => (prev + 1) % sliderImages.length)
-    setTimeout(() => setIsTransitioning(false), 600)
-  }
-
-  const prevSlide = () => {
-    if (isTransitioning) return
-    setIsTransitioning(true)
-    setCurrentSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length)
-    setTimeout(() => setIsTransitioning(false), 600)
-  }
+  const nextSlide = () => changeSlide((prev) => (prev + 1) % sliderImages.length)
+  const prevSlide = () => changeSlide((prev) => (prev - 1 + sliderImages.length) % sliderImages.length)
 
   return (
     <section id="home" className="hero-slider-section">
@@ -56,7 +57,7 @@ function Slider() {
                     We provide reliable, high-quality construction and remodeling services for homes and businesses.
                     From small updates to full renovations, we bring your vision to life with precision, transparency, and care.
                   </p>
-                  <a href="tel:848-313-3778" className="hero-cta-btn">
+                  <a href={`tel:${contactInfo.phone}`} className="hero-cta-btn">
                     <span>Call today for a free estimate!</span>
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                       <path d="M4 10H16M16 10L12 6M16 10L12 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -97,6 +98,16 @@ function Slider() {
               key={index}
               className={`hero-thumbnail ${index === currentSlide ? 'active' : ''}`}
               onClick={() => goToSlide(index)}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                  e.preventDefault()
+                  goToSlide(index)
+                }
+              }}
+              role="button"
+              tabIndex={0}
+              aria-label={`Go to slide ${index + 1}: ${image.alt}`}
+              aria-current={index === currentSlide}
               style={{ backgroundImage: `url(${image.url})` }}
             >
               <div className="hero-thumbnail-overlay"></div>

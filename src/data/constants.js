@@ -13,7 +13,7 @@ export const sliderImages = [
     alt: 'Home construction and remodeling'
   },
   {
-    url: 'https://images.unsplash.com/photo-1600607687644-c7171b42498b?w=1200&h=600&fit=crop',
+    url: 'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?w=1200&h=600&fit=crop',
     alt: 'Interior design and renovation'
   },
   {
@@ -74,7 +74,8 @@ export const services = [
 export const contactInfo = {
   owner: 'Farrukh Ismativ',
   address: '139 E KENNEDY BLVD APT 17, LAKEWOOD NJ 08701',
-  phone: '848-313-3778'
+  phone: '848-313-3778',
+  email: 'info@amirironroot.com'
 }
 
 // Features data

@@ -18,6 +18,12 @@ function Contact() {
               {contactInfo.phone}
             </a>
           </div>
+          <div className="contact-item">
+            <strong>Email:</strong>{' '}
+            <a href={`mailto:${contactInfo.email}`}>
+              {contactInfo.email}
+            </a>
+          </div>
         </div>
         <a href={`tel:${contactInfo.phone}`} className="cta-button">Call for a Free Estimate</a>
       </div>
