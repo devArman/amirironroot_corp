@@ -1,24 +1,25 @@
-import Navigation from './components/Navigation'
-import Slider from './components/Slider'
-import HeroFeatures from './components/HeroFeatures'
-import About from './components/About'
-import Services from './components/Services'
-import Contact from './components/Contact'
+import Header from './components/Header'
+import Hero from './components/Hero'
+import { About, Area, Contact, Faq, Features, Process, Projects, Services } from './components/Sections'
 import Footer from './components/Footer'
-import './App.css'
 
-function App() {
+export default function App() {
   return (
     <>
-      <Navigation />
-      <Slider />
-      <HeroFeatures />
-      <About />
-      <Services />
-      <Contact />
+      <a href="#main" className="skip-link">Skip to content</a>
+      <Header />
+      <main id="main">
+        <Hero />
+        <Features />
+        <About />
+        <Services />
+        <Process />
+        <Projects />
+        <Area />
+        <Faq />
+        <Contact />
+      </main>
       <Footer />
     </>
   )
 }
-
-export default App

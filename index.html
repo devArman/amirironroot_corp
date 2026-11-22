@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
     <!-- Primary Meta Tags -->
@@ -19,13 +19,16 @@
     />
     <meta
       name="keywords"
-      content="construction, remodeling, renovation, Lakewood NJ, kitchen renovation, bathroom remodeling, basement finishing, licensed contractor, home improvement"
+      content="construction, remodeling, renovation, general contractor Lakewood NJ, kitchen remodeling, bathroom renovation, basement finishing, flooring installation, drywall, painting, carpentry, deck builder, doors and windows, commercial remodeling, home improvement, Toms River, Jackson, Howell, Ocean County, Monmouth County"
     />
     <meta name="author" content="Farrukh Ismativ" />
-    <meta name="robots" content="index, follow" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta name="language" content="English" />
     <meta name="revisit-after" content="7 days" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#0d0e10" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="geo.region" content="US-NJ" />
+    <meta name="geo.placename" content="Lakewood, New Jersey" />
 
     <!-- Canonical URL -->
     <link rel="canonical" href="https://www.amirironroot.com/" />
@@ -79,19 +82,23 @@
     />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
 
     <!-- Preconnect for Performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,600..900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <!-- First hero slide is the largest paint on load -->
+    <link rel="preload" as="image" href="images/photo-1600585154340-be6161a56a0c.jpg" fetchpriority="high" />
+    <noscript><style>.reveal{opacity:1!important;transform:none!important}</style></noscript>
 
     <!-- Google Analytics -->
     <link rel="preconnect" href="https://www.googletagmanager.com" />
@@ -126,47 +133,8 @@
     </script>
     <!-- End Google Tag Manager -->
 
-    <!-- Structured Data (schema.org GeneralContractor, a LocalBusiness subtype) -->
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "GeneralContractor",
-        "name": "AMIRIRONROOT CORP",
-        "image": "https://www.amirironroot.com/og-image.jpg",
-        "@id": "https://www.amirironroot.com/",
-        "url": "https://www.amirironroot.com/",
-        "telephone": "848-313-3778",
-        "email": "info@amirironroot.com",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "139 E KENNEDY BLVD APT 17",
-          "addressLocality": "Lakewood",
-          "addressRegion": "NJ",
-          "postalCode": "08701",
-          "addressCountry": "US"
-        },
-        "geo": {
-          "@type": "GeoCoordinates",
-          "latitude": 40.0968,
-          "longitude": -74.2177
-        },
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": [
-            "Monday",
-            "Tuesday",
-            "Wednesday",
-            "Thursday",
-            "Friday",
-            "Saturday"
-          ],
-          "opens": "08:00",
-          "closes": "18:00"
-        },
-        "areaServed": "Lakewood, NJ"
-      }
-    </script>
+    <!-- JSON-LD is generated from src/seo.js at build time (scripts/prerender.mjs) -->
+    <!--schema-->
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
