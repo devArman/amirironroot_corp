@@ -1,5 +1,5 @@
 // All page content lives here: components and the JSON-LD (src/seo.js) both read from it.
-const img = (id) => `${import.meta.env.BASE_URL}images/photo-${id}.jpg`
+const img = (id) => `images/photo-${id}.jpg` // relative: works at the domain root and in previews
 
 export const siteUrl = 'https://www.amirironroot.com/'
 
